@@ -1,0 +1,101 @@
+﻿@model Slack
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+
+
+    <!-- Portfolio Item Row -->
+    <section class="h-80" style="background-color: #f0f0f0;">
+        <div class="container py-3 h-100" style="background-color: #353839;">
+            <div class="row d-flex justify-content-center align-items-center h-80">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black" style="border-color: #353839;">
+                        <div class="row g-0">
+                            <div class="col-lg-3 d-flex column">
+                                <div class="card-body d-flex column justify-content-center align-items-center bg-light">
+                                    <img class="img-fluid d-block" src="@Model.Image" alt="Card image cap">
+                                </div>
+                            </div>
+                            <div class="col-lg-9 p-3 align-items-center bg-dark">
+                                <div class="text-white">
+                                    <table class="table">
+                                        <thead class="thead-dark bg-dark text-light" style="border-bottom: 2px solid #115C39;">
+                                            <tr>
+                                                <th class="p-2" scope="col">Slack Details</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <h6 class="my-3" style="color: #198754;">Personal Information</h6>
+                                        <ul>
+                                            <li>Name: @Model.User.Name</li>
+                                            <li>Gmail: @Model.User.Username</li>
+                                            <li>Contact: @Model.User.Contact</li>
+                                            <li>Department: @Model.User.Department</li>
+                                        </ul>
+
+                                    <h6 class="my-3" style="color: #198754;">Size</h6>
+                                        <ul>
+                                            <li>Waist: @Model.Waist</li>
+                                            <li>Length: @Model.Length</li>
+                                        </ul>
+                                    <h6 class="my-3" style="color: #198754;">Location</h6>
+                                        <ul>
+                                        <li>@Model.Address.Street . @Model.Address.City, @Model.Address.State</li>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- /.row -->
+    <!-- Related Projects Row -->
+    <h4 class="my-4 text-light">Related Items</h4>
+
+    <div class="row">
+        @foreach (var relatedItem in Model.RelatedItems)
+        {
+            <div class="col-md-3">
+                <div class="card flex-md-row mb-4 box-shadow h-md-250 bg-dark text-white">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        
+                        <h3 class="mb-negative-10">
+                            <p class="text-white">
+                                Slacks
+                            </p>
+                        </h3>
+                        @if (relatedItem.Status == null)
+                        {
+                            <div class="mb-1 text-muted">For Sale</div>
+                        }
+                        else
+                        {
+                            <div class="mb-1 text-muted">Sold</div>
+                        }
+                        <p class="card-text mb-auto">Waist : @relatedItem.Waist</p>
+                        <p class="card-text mb-auto">Length : @relatedItem.Length</p>
+
+                        <a type="button" href="@Url.Action("Detail", "Slack", new { id = relatedItem.Id })" class="d-inline-block mb-2" style="color: #198754;">View Details >></a>
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center col-xl-4 bg-light">
+                        <img class="img-fluid" src="@relatedItem.Image" alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+

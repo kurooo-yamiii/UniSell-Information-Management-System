@@ -1,0 +1,90 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PST - Uniform Buy/Sell</title>
+    <link rel="shortcut icon" href="http://res.cloudinary.com/dky9pzz0r/image/upload/v1720858868/twir8si1gqwslow8fq7q.png" type="image/x-icon" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebUniform.styles.css" asp-append-version="true" />
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark box-shadow mb-3" style="border-bottom: 2px solid #115C39;">
+            <div class="container-fluid">
+                <div class="text-center" style="margin-right: 10px">
+                    <img src="http://res.cloudinary.com/dky9pzz0r/image/upload/v1720858868/twir8si1gqwslow8fq7q.png"
+                         style="width: 50px;" alt="logo">
+                   
+                </div>
+                <a class="navbar-brand text-lime mr-7" style="color: #115C39;">UniSell</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                         @if (HttpContextAccessor.HttpContext.Session.GetString("IsAuthenticated") == "true")
+                        {
+                            <li class="nav-item mr-4">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Dashboard</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item mr-4">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Home">Home</a>
+                            </li>
+                        }
+                        <li class="nav-item mr-4">
+                            <a class="nav-link" asp-area="" asp-controller="Slack" asp-action="Index">Slacks</a>
+                        </li>
+                        <li class="nav-item mr-4">
+                            <a class="nav-link" asp-area="" asp-controller="Uniform" asp-action="Index">Uniform</a>
+                        </li>
+                        </ul>
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("IsAuthenticated") == "true")
+                        {
+                            <li class="nav-item mr-4">
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                            </li>
+                           
+                        }
+                        else
+                        {
+                            <li class="nav-item mr-4">
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item mr-4">
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
+                            </li>
+                        }
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="background-color: #353839;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted bg-dark" style="border-top: 2px solid #115C39;">
+        <div class="container">
+            &copy; 2024 - Kenneth Cobarrubias - <a style="color: #115C39;" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿@using WebUniform.ViewModel
+@model UserEditViewModel
+
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+<section class="h-80" style="background-color: #f0f0f0;">
+    <div class="container py-3 h-100" style="background-color: #353839;">
+        <div class="row d-flex justify-content-center align-items-center h-80">
+            <div class="col-xl-5">
+                <div class="card rounded-3 text-black" style="border-color: #353839;">
+                    <div class="row g-0">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <table class="table">
+                                    <thead class="thead-dark bg-dark" style="border-bottom: 2px solid #115C39;">
+                                        <tr>
+                                            <th class="p-3 fs-5" style="color:  #198754;" scope="col">Update Account Information</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="card-body p-md-1 mx-md-5">
+                                <form method="post" asp-action="Edit" enctype="multipart/form-data">
+
+                                    @if (TempData["Error"] != null)
+                                    {
+                                        <div class="col-md-12 alert alert-danger">
+                                            <span><b>Sorry!</b> - @TempData["Error"] </span>
+                                        </div>
+                                    }
+
+                                    @if (TempData["Success"] != null)
+                                    {
+                                        <div class="col-md-12 alert alert-success">
+                                            <span>@TempData["Success"]</span>
+                                        </div>
+                                    }
+
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="mb-2" asp-for="Name">Name</label>
+                                        <input asp-for="Name" class="form-control" placeholder="Name">
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="mb-2" asp-for="Contact">Contact</label>
+                                        <input asp-for="Contact" class="form-control" placeholder="Contact">
+                                        <span asp-validation-for="Contact" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="mb-2" asp-for="Department">Department</label>
+                                        <input asp-for="Department" class="form-control" placeholder="Department">
+                                        <span asp-validation-for="Department" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="mb-2" asp-for="Password">Password</label>
+                                        <input asp-for="Password" ype="password" class="form-control" placeholder="Password" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="text-center pt-1 mb-3 pb-1">
+                                        <button type="submit" class="btn bg-dark text-light">Update Account</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

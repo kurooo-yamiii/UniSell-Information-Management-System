@@ -1,0 +1,90 @@
+﻿@using WebUniform.ViewModel
+@model UniformCreateModel
+
+@* For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860 *@
+@{
+}
+
+
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+<section class="h-80" style="background-color: #f0f0f0;">
+    <div class="container py-3 h-100" style="background-color: #353839;">
+        <div class="row d-flex justify-content-center align-items-center h-80">
+            <div class="col-xl-5">
+                <div class="card rounded-3 text-black" style="border-color: #353839;">
+                    <div class="row g-0">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <table class="table">
+                                    <thead class="thead-dark bg-dark" style="border-bottom: 2px solid #115C39;">
+                                        <tr>
+                                            <th class="p-3 fs-5" style="color:  #198754;" scope="col">Create New Uniform</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="card-body p-md-1 mx-md-5">
+                                <form method="post" asp-action="Create" enctype="multipart/form-data">
+
+                                    @if (TempData["Error"] != null)
+                                    {
+                                        <div class="col-md-12 alert alert-danger">
+                                            <span><b>Sorry!</b> - @TempData["Error"] </span>
+                                        </div>
+                                    }
+
+                                    @if (TempData["Success"] != null)
+                                    {
+                                        <div class="col-md-12 alert alert-success">
+                                            <span>@TempData["Success"]</span>
+                                        </div>
+                                    }
+
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input asp-for="Shoulder" class="form-control" placeholder="Shoulder (CM)">
+                                        <span asp-validation-for="Shoulder" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input asp-for="Sleeve" class="form-control" placeholder="Sleeve (CM)">
+                                        <span asp-validation-for="Sleeve" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input asp-for="Length" class="form-control" placeholder="Length (CM)">
+                                        <span asp-validation-for="Length" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                       
+                                        <input asp-for="Address.Street" class="form-control" placeholder="Street">
+                                        <span asp-validation-for="Address.Street" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                
+                                        <input asp-for="Address.City" class="form-control" placeholder="City">
+                                        <span asp-validation-for="Address.City" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-3">
+                                     
+                                        <input asp-for="Address.State" class="form-control" placeholder="State">
+                                        <span asp-validation-for="Address.State" class="text-danger"></span>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="mb-2" asp-for="Image">Image</label>
+                                        <input asp-for="Image" type="file" class="form-control" placeholder="Image">
+                                        <span asp-validation-for="Image" class="text-danger"></span>
+                                    </div>
+                                    <div class="text-center pt-1 mb-3 pb-1">
+                                        <button type="submit" class="btn bg-dark text-light">Add Uniform</button>
+                                    </div>
+                                    
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
