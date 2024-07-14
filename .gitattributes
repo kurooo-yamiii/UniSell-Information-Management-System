@@ -61,3 +61,18 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# Adjust language detection to ensure C# is recognized correctly
+###############################################################################
+# Ignore common non-C# files for language stats
+*.html linguist-vendored
+*.css linguist-vendored
+*.js linguist-vendored
+*.json linguist-vendored
+
+# Mark all C# files explicitly
+*.cs linguist-language=C#
+*.cshtml linguist-language=C#
+*.config linguist-language=XML
+
