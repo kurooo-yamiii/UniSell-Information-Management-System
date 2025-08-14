@@ -47,14 +47,16 @@ namespace WebUniform.Migrations
                 table: "Slacks",
                 column: "SlackId",
                 principalTable: "Slacks",
-                principalColumn: "Id");
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Uniforms_Uniforms_UniformId",
                 table: "Uniforms",
                 column: "UniformId",
                 principalTable: "Uniforms",
-                principalColumn: "Id");
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

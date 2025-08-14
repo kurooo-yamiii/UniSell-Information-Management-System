@@ -83,7 +83,7 @@ namespace WebUniform.Controllers
                 Length = slack.Length,
                 URL = slack.Image,
                 Address = slack.Address,
-                AddressId = slack.AddressId,
+                AddressId = slack.AddressId
             };
 
             return View(SlackVM);
@@ -151,6 +151,7 @@ namespace WebUniform.Controllers
                 AddressId = slackVM.AddressId,
                 Address = existingAddress,
                 UserId = userId,
+                SlackId = 1,
             };
 
           

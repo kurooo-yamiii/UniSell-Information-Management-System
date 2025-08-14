@@ -54,7 +54,7 @@ namespace WebUniform.Migrations
                 column: "ParentSlackId",
                 principalTable: "Slacks",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Uniforms_Uniforms_ParentUniformId",
@@ -62,14 +62,11 @@ namespace WebUniform.Migrations
                 column: "ParentUniformId",
                 principalTable: "Uniforms",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Slacks_Slacks_ParentSlackId",
-                table: "Slacks");
 
             migrationBuilder.DropForeignKey(
                 name: "FK_Uniforms_Uniforms_ParentUniformId",
