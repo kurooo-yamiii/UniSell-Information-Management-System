@@ -31,14 +31,14 @@ It provides efficient inventory tracking, transaction management, and sales moni
 
 | Screenshot | Description |
 |-------------|--------------|
-| ![Snapshot 1](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot1.png?raw=true) | Dashboard Overview |
-| ![Snapshot 2](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot2.png?raw=true) | POS Interface |
-| ![Snapshot 3](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot3.png?raw=true) | Sales Transactions |
+| ![Snapshot 1](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot1.png?raw=true) | Login Overview |
+| ![Snapshot 2](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot2.png?raw=true) | Register Interface |
+| ![Snapshot 3](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot3.png?raw=true) | Dashboard Overview |
 | ![Snapshot 4](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot4.png?raw=true) | Product Management |
-| ![Snapshot 5](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot5.png?raw=true) | Inventory Section |
-| ![Snapshot 6](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot6.png?raw=true) | Reports Overview |
-| ![Snapshot 7](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot7.png?raw=true) | User Access Panel |
-| ![Snapshot 8](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot8.png?raw=true) | System Settings |
+| ![Snapshot 5](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot5.png?raw=true) | Uniform Creation |
+| ![Snapshot 6](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot6.png?raw=true) | Item Listing |
+| ![Snapshot 7](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot7.png?raw=true) | Slack Creation |
+| ![Snapshot 8](https://github.com/kurooo-yamiii/UniSell-Information-Management-System/blob/master/WebUniform/wwwroot/images/SnapShot8.png?raw=true) | Item Update |
 
 ---
 
